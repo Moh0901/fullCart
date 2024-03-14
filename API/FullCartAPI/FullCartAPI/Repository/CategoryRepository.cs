@@ -65,20 +65,19 @@ namespace FullCartAPI.Repository
 
         public TblCategory UpdateCategory(CategoryResponse categoryResponse, int id)
         {
-            var category = _context.TblCategories.FirstOrDefault(b => b.Id == id);
+                var category = _context.TblCategories.FirstOrDefault(b => b.Id == id);
 
-            category.CategoryName = categoryResponse.CategoryName;
-            category.ImagePath = categoryResponse.ImagePath;
-            category.UserId = categoryResponse.UserId;
-            category.UpdatedAt = categoryResponse.UpdatedAt;
-            
+                category.CategoryName = categoryResponse.CategoryName;
+                category.ImagePath = categoryResponse.ImagePath;
+                category.UserId = categoryResponse.UserId;
+                category.UpdatedAt = categoryResponse.UpdatedAt;
 
-            _context.Entry(category).State = EntityState.Modified;
-         
-            _context.SaveChanges();
 
-            return category;
+                _context.Entry(category).State = EntityState.Modified;
 
+                _context.SaveChanges();
+
+                return category;
         }
 
         [NonAction]

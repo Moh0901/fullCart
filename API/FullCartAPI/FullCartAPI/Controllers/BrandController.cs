@@ -43,18 +43,27 @@ namespace FullCartAPI.Controllers
 
         public IActionResult GetBrandById(int id)
         {
-            var brand = _brandRepository.GetBrandById(id);
-
-            if (brand == null)
+            try
             {
-                return NotFound($"Brand Not Found of {id}.");
+                var brand = _brandRepository.GetBrandById(id);
+
+                if (brand == null)
+                {
+                    return NotFound($"Brand Not Found of {id}.");
+                }
+                string baseUrl = $"{HttpContext.Request.Scheme}://{HttpContext.Request.Host}{HttpContext.Request.PathBase}";
+                string host = baseUrl + "/Assest/images/brand/";
+
+                brand.ImagePath = host + brand.ImagePath.ToString();
+
+                return Ok(brand);
             }
-            string baseUrl = $"{HttpContext.Request.Scheme}://{HttpContext.Request.Host}{HttpContext.Request.PathBase}";
-            string host = baseUrl + "/Assest/images/brand/";
 
-            brand.ImagePath = host + brand.ImagePath.ToString();
-
-            return Ok(brand);
+            catch (Exception ex)
+            {
+                 return Ok(ex.Message);
+            }
+            
         }
         [HttpPost("addnew")]
 

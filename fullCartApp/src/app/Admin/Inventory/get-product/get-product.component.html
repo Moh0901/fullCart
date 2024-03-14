@@ -32,9 +32,9 @@ Download Products
           <td class="border px-4 py-4">{{i.name}}</td>
           <td class="border px-4 py-2">
             <img src="{{i.imagePath}}"></td>
-          <td class="border px-4 py-4">{{i.userId}}</td>
-          <td class="border px-4 py-4">{{i.brandId}}</td>
-          <td class="border px-4 py-4">{{i.categoryId}}</td>
+          <td class="border px-4 py-4">{{i.user.name}}</td>
+          <td class="border px-4 py-4">{{i.brand.brandName}}</td>
+          <td class="border px-4 py-4">{{i.category.categoryName}}</td>
           <td class="border px-8 py-4">
             <button type="submit" (click)="deleteProduct(i.id)"
                 class="block w-full rounded-md bg-gray-600 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-gray-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900">
