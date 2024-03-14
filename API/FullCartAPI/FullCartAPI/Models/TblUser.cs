@@ -1,5 +1,7 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
+using System.Text.Json.Serialization;
 
 namespace FullCartAPI.Models
 {
@@ -20,10 +22,14 @@ namespace FullCartAPI.Models
         public string? Password { get; set; }
         public int RoleId { get; set; }
 
-        public virtual TblUserRole Role { get; set; } = null!;
+        public virtual TblUserRole? Role { get; set; } = null!;
+        [JsonIgnore]
         public virtual ICollection<TblBrand> TblBrands { get; set; }
+        [JsonIgnore]
         public virtual ICollection<TblCategory> TblCategories { get; set; }
+        [JsonIgnore]
         public virtual ICollection<TblInventory> TblInventories { get; set; }
+        [JsonIgnore]
         public virtual ICollection<TblOrder> TblOrders { get; set; }
     }
 }

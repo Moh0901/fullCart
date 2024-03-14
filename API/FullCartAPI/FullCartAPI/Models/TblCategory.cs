@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text.Json.Serialization;
 
 namespace FullCartAPI.Models
 {
@@ -18,6 +19,8 @@ namespace FullCartAPI.Models
         public DateTime? UpdatedAt { get; set; }
 
         public virtual TblUser User { get; set; } = null!;
+
+        [JsonIgnore]
         public virtual ICollection<TblInventory> TblInventories { get; set; }
     }
 }

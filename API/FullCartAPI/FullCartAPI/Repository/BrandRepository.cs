@@ -50,14 +50,14 @@ namespace FullCartAPI.Repository
 
         public List<TblBrand> GetAllBrand()
         {
-            var categoryList = _context.TblBrands.ToList();
+            var categoryList = _context.TblBrands.Include(x=>x.User).Include(y=>y.User.Role).ToList();
 
             return categoryList;
         }
 
         public TblBrand GetBrandById(int id)
         {
-            var category = _context.TblBrands.FirstOrDefault(b => b.Id == id);
+            var category = _context.TblBrands.Include(x=>x.User).Include(y => y.User.Role).FirstOrDefault(b => b.Id == id);
 
             return category;
         }

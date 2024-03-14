@@ -31,16 +31,16 @@ namespace FullCartAPI.Repository
 
         public List<TblUser> GetAllUsers()
         {
-            var usersList = _context.Users.ToList();
-           // var usersList = _context.Users.Include(x=>x.Role).ToList();
+           // var usersList = _context.Users.ToList();
+            var usersList = _context.Users.Include(x=>x.Role).ToList();
 
             return usersList;
         }
 
         public TblUser GetUsersById(int id)
         {
-            var user = _context.Users.Find(id);
-            //var user = _context.Users.Include(x => x.Role).FirstOrDefault(y => y.Id == id);
+           // var user = _context.Users.Find(id);
+            var user = _context.Users.Include(x => x.Role).FirstOrDefault(y => y.Id == id);
 
             return user;
         }

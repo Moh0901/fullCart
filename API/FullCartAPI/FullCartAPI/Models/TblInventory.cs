@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text.Json.Serialization;
 
 namespace FullCartAPI.Models
 {
@@ -26,6 +27,8 @@ namespace FullCartAPI.Models
         public virtual TblBrand? Brand { get; set; }
         public virtual TblCategory? Category { get; set; }
         public virtual TblUser? User { get; set; }
+
+        [JsonIgnore]
         public virtual ICollection<TblOrderItem> TblOrderItems { get; set; }
     }
 }

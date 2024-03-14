@@ -52,14 +52,14 @@ namespace FullCartAPI.Repository
         public List<TblCategory> GetAllCategory()
         {
 
-            var categoryList = _context.TblCategories.ToList();
+            var categoryList = _context.TblCategories.Include(x => x.User).Include(y => y.User.Role).ToList();
 
             return categoryList;
         }
 
         public TblCategory GetCategoryById(int id)
         {
-            var category = _context.TblCategories.FirstOrDefault(b => b.Id == id);
+            var category = _context.TblCategories.Include(x => x.User).Include(y => y.User.Role).FirstOrDefault(b => b.Id == id);
             return category;
         }
 

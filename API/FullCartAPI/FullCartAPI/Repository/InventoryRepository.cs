@@ -57,14 +57,14 @@ namespace FullCartAPI.Repository
 
         public List<TblInventory> GetAllProducts()
         {
-            var inventoryList = _context.TblInventories.ToList();
+            var inventoryList = _context.TblInventories.Include(x=>x.User).Include(y=>y.Brand).Include(z=>z.Category).Include(a=>a.User.Role).ToList();
 
             return inventoryList;
         }
 
         public TblInventory GetProductById(int id)
         {
-            var inventory = _context.TblInventories.FirstOrDefault(b => b.Id == id);
+            var inventory = _context.TblInventories.Include(x => x.User).Include(y => y.Brand).Include(z => z.Category).Include(a => a.User.Role).FirstOrDefault(b => b.Id == id);
 
             return inventory;
         }
