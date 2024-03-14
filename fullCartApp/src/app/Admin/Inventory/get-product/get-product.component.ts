@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductService } from 'src/app/Services/product.service';
+import * as saveAs from 'file-saver';
 
 @Component({
   selector: 'app-get-product',
@@ -28,4 +29,16 @@ export class GetProductComponent implements OnInit{
       });
       alert("Delete Successfully");
     }
+    downloadProductsInExcel() {
+      this.productService.exportToExcel().subscribe(
+        (blob: Blob) => {
+          saveAs(blob, 'productsList.xlsx');
+        },
+        (error) => {
+          console.error(error);
+        }
+      );
+    }
 }
+
+

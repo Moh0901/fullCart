@@ -20,7 +20,8 @@ import { AddProductComponent } from './Admin/Inventory/add-product/add-product.c
 import { EditProductComponent } from './Admin/Inventory/edit-product/edit-product.component';
 import { GetProductComponent } from './Admin/Inventory/get-product/get-product.component';
 import { ViewProductsComponent } from './Customer/view-products/view-products.component';
-
+import { PageNotFoundComponent } from './Components/page-not-found/page-not-found.component';
+//import { FileSaverModule } from 'ngx-filesaver';
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,14 +36,16 @@ import { ViewProductsComponent } from './Customer/view-products/view-products.co
     AddProductComponent,
     EditProductComponent,
     GetProductComponent,
-    ViewProductsComponent
+    ViewProductsComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+   // FileSaverModule
   ],
   providers: [LoginServiceService, CategoryService,
     {

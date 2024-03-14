@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ProductService } from 'src/app/Services/product.service';
@@ -12,9 +12,10 @@ import { ProductService } from 'src/app/Services/product.service';
 export class AddProductComponent {
   addProductForm: FormGroup;
   // formData = new FormData();
-  formData: any
+  formData: any;
+  excelFile: File | null = null;
 
-  constructor(private brandService: ProductService, private router: Router, private fb: FormBuilder, private http: HttpClient) {
+  constructor(private productService: ProductService, private router: Router, private fb: FormBuilder, private http: HttpClient) {
     //this.formData;
     this.addProductForm = this.fb.group({
       name: [''],
@@ -74,4 +75,32 @@ export class AddProductComponent {
         this.addProductForm.reset();
       });
   }
-}
+  handleUpload(): void {
+    if (this.excelFile) {
+      const formData = new FormData();
+      formData.append('formFile', this.excelFile);
+
+      // Adjust the API endpoint as needed
+      this.http.post('https://localhost:7201/api/ExcelProducts/upload', formData).subscribe(
+        (response) => {
+          // Handle successful upload response
+          console.log('File uploaded successfully:', response);
+        },
+        (error) => {
+          // Handle upload error
+          console.error('Error uploading file:', error);
+        }
+      );
+    }
+  }
+
+  onFile(event: Event): void {
+    const inputElement = event.target as HTMLInputElement;
+    if (inputElement.files && inputElement.files.length > 0) {
+      this.excelFile = inputElement.files[0];
+    }
+  }
+} 
+
+
+

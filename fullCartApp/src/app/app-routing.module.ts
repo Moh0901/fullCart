@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './Components/login/login.component';
-import { CategoryService } from './Services/category.service';
+
 import { GetCategoryComponent } from './Admin/Category/get-category/get-category.component';
 import { AddCategoryComponent } from './Admin/Category/add-category/add-category.component';
 import { EditCategoryComponent } from './Admin/Category/edit-category/edit-category.component';
@@ -12,6 +12,7 @@ import { GetProductComponent } from './Admin/Inventory/get-product/get-product.c
 import { AddProductComponent } from './Admin/Inventory/add-product/add-product.component';
 import { EditProductComponent } from './Admin/Inventory/edit-product/edit-product.component';
 import { ViewProductsComponent } from './Customer/view-products/view-products.component';
+import { PageNotFoundComponent } from './Components/page-not-found/page-not-found.component';
 
 const routes: Routes = [
   { 
@@ -51,6 +52,10 @@ const routes: Routes = [
   },
   {
     path: 'view-product', component: ViewProductsComponent
+  },
+  {
+    path:"**",
+    component: PageNotFoundComponent
   }
 ];
 
