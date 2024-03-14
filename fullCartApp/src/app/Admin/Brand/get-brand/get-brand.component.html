@@ -1,0 +1,42 @@
+
+<div class="relative isolate  px-6 py-24 sm:py-20 lg:px-8">
+    <table class="shadow-lg bg-white border-collapse mx-auto max-w-2xl text-center">
+        <thead>
+            <tr>
+                <th class="bg-gray-500 border text-left px-4 py-4 text-white">Sr.No.</th>
+                <th class="bg-gray-500 border text-left px-4 py-4 text-white">BrandName</th>
+                <th class="bg-gray-500 border text-left px-4 py-4 text-white">Image</th>
+                <th class="bg-gray-500 border text-left px-4 py-4 text-white">CreatedBy</th>
+                <th class="bg-gray-500 border text-left px-4 py-4 text-white">CreatedAt</th>
+                <th class="bg-gray-500 border text-left px-4 py-4 text-white">UpdatedAt</th>
+                <th class="bg-gray-500 border text-left px-8 py-4 text-white">Action</th>
+              </tr>
+        </thead>
+        <tbody>
+            <tr
+          class="hover:bg-gray-300 focus:bg-gray-200"
+          tabindex="0"
+          *ngFor="let i of brand" >
+          <td class="border px-4 py-4">{{i.id}}</td>
+          <td class="border px-4 py-4">{{i.brandName}}</td>
+          <td class="border px-4 py-2">
+            <img src="{{i.imagePath}}"></td>
+          <td class="border px-4 py-4">{{i.userId}}</td>
+          <td class="border px-4 py-4">{{i.createdAt | date}}</td>
+          <td class="border px-4 py-4">{{i.updatedAt | date}}</td>
+          <td class="border px-8 py-4">
+            <button type="submit" (click)="deletebrand(i.id)"
+                class="block w-full rounded-md bg-gray-600 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-gray-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900">
+                Delete
+            </button>
+            <button type="submit" routerLink="/edit-brand/{{i.id}}"
+                class="block w-full rounded-md bg-gray-600 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-gray-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900">
+                View
+            </button>
+          
+          </td>
+        </tr>
+        </tbody>
+        
+      </table>
+    </div>
