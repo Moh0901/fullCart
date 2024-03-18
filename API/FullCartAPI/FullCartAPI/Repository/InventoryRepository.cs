@@ -92,6 +92,19 @@ namespace FullCartAPI.Repository
             return inventory;
         }
 
+
+/*        public List<TblInventory> SearchProducts(SearchViewModel searchViewModel)
+        {
+            List<TblInventory> result = new List<TblInventory>();
+            if (!string.IsNullOrWhiteSpace(searchViewModel.Name))
+            {
+                result = _context.TblInventories.Where(x => x.Name.ToLower().Contains(searchViewModel.Name.ToLower())).ToList();
+            }
+            var value = result;
+            return value;
+        }*/
+
+
         [NonAction]
         public String ImageFileAdd(IFormFile ImagePath)
         {
@@ -148,5 +161,6 @@ namespace FullCartAPI.Repository
             }
 
         }
+
     }
 }

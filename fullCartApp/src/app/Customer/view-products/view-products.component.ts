@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { ProductService } from 'src/app/Services/product.service';
 
 @Component({
@@ -6,13 +7,14 @@ import { ProductService } from 'src/app/Services/product.service';
   templateUrl: './view-products.component.html',
   styleUrls: ['./view-products.component.css']
 })
+
 export class ViewProductsComponent implements  OnInit {
 
   products: any=[];
   constructor(private productService: ProductService) { }
 
   ngOnInit(){
-   this.getPorducts();
+    this.getPorducts(); 
   }
 
   getPorducts() {
@@ -21,5 +23,4 @@ export class ViewProductsComponent implements  OnInit {
       this.products=data;
     });
   }
-
 }

@@ -34,16 +34,14 @@
           <div class="hidden sm:ml-6 sm:block">
             <div class="flex space-x-4">
               <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-              <a routerLink="/get-category" routerLinkActive="active" 
+              <a routerLink="/get-category" routerLinkActive="active"  *ngIf="role!='2' &&  jwt"
                 class="text-gray-300 hover:bg-gray-700 hover:text-white focus:bg-gray-900 rounded-md px-3 py-2 text-sm font-medium">Category</a>
-              <a routerLink="/get-brand" routerLinkActive="active" 
+              <a routerLink="/get-brand" routerLinkActive="active"  *ngIf="role!='2' &&  jwt"
                 class="text-gray-300 hover:bg-gray-700 hover:text-white focus:bg-gray-900 rounded-md px-3 py-2 text-sm font-medium">Brand</a>
-              <a routerLink="/get-product"  routerLinkActive="active"   
+              <a routerLink="/get-product"  routerLinkActive="active"    *ngIf="role!='2' &&  jwt"
               class="text-gray-300 hover:bg-gray-700 hover:text-white focus:bg-gray-900 rounded-md px-3 py-2 text-sm font-medium">Products</a>
-              <!-- <a routerLink="/get-category" routerLinkActive="active" 
-              class="text-gray-300 hover:bg-gray-700 hover:text-white focus:bg-gray-900 rounded-md px-3 py-2 text-sm font-medium">Catge</a>
-              <a routerLink="/policy/get-policy" routerLinkActive="active"  
-              class="text-gray-300 hover:bg-gray-700 hover:text-white focus:bg-gray-900 rounded-md px-3 py-2 text-sm font-medium">Policy Details</a> -->
+              <a routerLink="/viewproduct"  routerLinkActive="active"    *ngIf="role=='1' || role=='2' &&  jwt"
+              class="text-gray-300 hover:bg-gray-700 hover:text-white focus:bg-gray-900 rounded-md px-3 py-2 text-sm font-medium">View Products</a>
             </div>
           </div>
         </div>

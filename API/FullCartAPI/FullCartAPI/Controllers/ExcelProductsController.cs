@@ -1,6 +1,7 @@
 ﻿using FullCartAPI.ExcelHelper;
 using FullCartAPI.Models;
 using FullCartAPI.RequestModel;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -9,6 +10,7 @@ using NPOI.SS.Formula.Functions;
 
 namespace FullCartAPI.Controllers
 {
+    [Authorize(Roles = "1")]
     [Route("api/[controller]")]
     [ApiController]
     public class ExcelProductsController : ControllerBase

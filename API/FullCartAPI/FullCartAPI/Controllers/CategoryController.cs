@@ -2,6 +2,7 @@
 using FullCartAPI.Repository.Interfaces;
 using FullCartAPI.ViewModels;
 using Humanizer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -9,6 +10,7 @@ using System.Drawing.Design;
 
 namespace FullCartAPI.Controllers
 {
+    [Authorize(Roles = "1")]
     [Route("api/[controller]")]
     [ApiController]
     public class CategoryController : ControllerBase

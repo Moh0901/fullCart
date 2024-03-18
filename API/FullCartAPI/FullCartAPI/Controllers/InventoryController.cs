@@ -1,6 +1,7 @@
 ﻿using FullCartAPI.Repository;
 using FullCartAPI.Repository.Interfaces;
 using FullCartAPI.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -16,6 +17,8 @@ namespace FullCartAPI.Controllers
         {
             _inventoryRepository = inventoryRepository;
         }
+
+        [Authorize(Roles = "1,2")]
 
         [HttpGet("getall")]
 
@@ -36,6 +39,7 @@ namespace FullCartAPI.Controllers
 
             return Ok(productList);
         }
+        [Authorize(Roles = "1,2")]
 
         [HttpGet("getby/{id}")]
 
@@ -54,6 +58,7 @@ namespace FullCartAPI.Controllers
 
             return Ok(product);
         }
+        [Authorize(Roles = "1")]
 
         [HttpPost("addnew")]
 
@@ -68,6 +73,8 @@ namespace FullCartAPI.Controllers
 
             return Ok(newProduct);
         }
+        [Authorize(Roles = "1")]
+
         [HttpPut("updateproduct")]
         public IActionResult UpdateProduct(int id, [FromForm] InventoryViewModel inventoryViewModel)
         {
@@ -130,6 +137,8 @@ namespace FullCartAPI.Controllers
             }
             return NotFound("User Not Found");
         }
+        [Authorize(Roles = "1")]
+
         [HttpDelete("deleteproduct")]
 
         public IActionResult DeleteCategory(int id)
@@ -143,6 +152,17 @@ namespace FullCartAPI.Controllers
 
             return Ok(product);
         }
+
+/*        public IActionResult SearchProduct([FromQuery] SearchViewModel searchViewModel)
+        {
+            if (string.IsNullOrWhiteSpace(searchViewModel.Name))
+                {
+                   return BadRequest();
+                }
+
+            var result = _inventoryRepository.SearchProducts(searchViewModel);
+            return Ok(result);
+        }*/
 
         [NonAction]
         public String ImageFileAdd(IFormFile ImagePath)

@@ -13,6 +13,8 @@ import { AddProductComponent } from './Admin/Inventory/add-product/add-product.c
 import { EditProductComponent } from './Admin/Inventory/edit-product/edit-product.component';
 import { ViewProductsComponent } from './Customer/view-products/view-products.component';
 import { PageNotFoundComponent } from './Components/page-not-found/page-not-found.component';
+import { AuthGuard } from './authguard.guard';
+import { HomeComponent } from './Components/home/home.component';
 
 const routes: Routes = [
   { 
@@ -24,39 +26,42 @@ const routes: Routes = [
     path: 'login', component: LoginComponent
   },
   {
-    path: 'get-category', component: GetCategoryComponent
+    path: 'get-category', component: GetCategoryComponent, },
+  {
+    path: 'add-category', component: AddCategoryComponent, 
   },
   {
-    path: 'add-category', component: AddCategoryComponent
+    path: 'edit-category/:id', component: EditCategoryComponent,
   },
   {
-    path: 'edit-category/:id', component: EditCategoryComponent
+    path: 'get-brand', component: GetBrandComponent, 
   },
   {
-    path: 'get-brand', component: GetBrandComponent
+    path: 'add-brand', component: AddBrandComponent, 
   },
   {
-    path: 'add-brand', component: AddBrandComponent
+    path: 'edit-brand/:id', component: EditBrandComponent, 
   },
   {
-    path: 'edit-brand/:id', component: EditBrandComponent
+    path: 'get-product', component: GetProductComponent,
   },
   {
-    path: 'get-product', component: GetProductComponent
+    path: 'add-product', component: AddProductComponent,
   },
   {
-    path: 'add-product', component: AddProductComponent
+    path: 'edit-product/:id', component: EditProductComponent, 
   },
   {
-    path: 'edit-product/:id', component: EditProductComponent
+    path: 'viewproduct', component: ViewProductsComponent,
   },
   {
-    path: 'view-product', component: ViewProductsComponent
+    path:"home",
+    component: HomeComponent
   },
   {
     path:"**",
     component: PageNotFoundComponent
-  }
+  },
 ];
 
 @NgModule({

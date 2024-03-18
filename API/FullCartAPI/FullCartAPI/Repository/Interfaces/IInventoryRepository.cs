@@ -14,5 +14,7 @@ namespace FullCartAPI.Repository.Interfaces
         TblInventory UpdateProduct(InventoryResponse inventory, int id);
 
         TblInventory DeleteProduct(int id);
+
+       // List<TblInventory> SearchProducts( SearchViewModel searchViewModel);
     }
 }

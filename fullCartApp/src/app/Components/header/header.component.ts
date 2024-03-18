@@ -15,7 +15,7 @@ export class HeaderComponent {
   
   logout=()=>{
     localStorage.clear();
-    this.router.navigate([""]);
+    this.router.navigate(["/login"]);
     setTimeout(function(){window.location.reload(); }, 100);
   }
 }

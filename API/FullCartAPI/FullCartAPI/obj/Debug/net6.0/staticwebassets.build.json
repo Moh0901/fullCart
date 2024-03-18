@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "18PvhOo33rziGAEqqWIDAdvfMAEj/VP98w8KgSvQx5s=",
+  "Hash": "MY+0dFosj3hdDa3L7yCxJc79YU1zxI9V9Tzwv8iWke0=",
   "Source": "FullCartAPI",
   "BasePath": "_content/FullCartAPI",
   "Mode": "Default",
@@ -408,6 +408,23 @@
       "OriginalItemSpec": "wwwroot\\Assest\\images\\brand\\f925895c-e112-49c4-89ad-344784ec4912.jpg"
     },
     {
+      "Identity": "C:\\Users\\2122137\\Assignment\\API\\FullCartAPI\\FullCartAPI\\wwwroot\\Assest\\images\\brand\\feb3074f-c588-467e-80e8-dc9a18ed9398.jpg",
+      "SourceId": "FullCartAPI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\2122137\\Assignment\\API\\FullCartAPI\\FullCartAPI\\wwwroot\\",
+      "BasePath": "_content/FullCartAPI",
+      "RelativePath": "Assest/images/brand/feb3074f-c588-467e-80e8-dc9a18ed9398.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Assest\\images\\brand\\feb3074f-c588-467e-80e8-dc9a18ed9398.jpg"
+    },
+    {
       "Identity": "C:\\Users\\2122137\\Assignment\\API\\FullCartAPI\\FullCartAPI\\wwwroot\\Assest\\images\\category\\04ca7bfb-3fbb-44a0-8304-42a5d377bdb0.jpg",
       "SourceId": "FullCartAPI",
       "SourceType": "Discovered",
@@ -576,6 +593,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Assest\\images\\inventory\\42a07b10-414b-49bf-be66-085eabf8254d.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\2122137\\Assignment\\API\\FullCartAPI\\FullCartAPI\\wwwroot\\uploads\\aafdd45c-bf0f-4eac-a809-06f927bd0482..xlsx",
+      "SourceId": "FullCartAPI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\2122137\\Assignment\\API\\FullCartAPI\\FullCartAPI\\wwwroot\\",
+      "BasePath": "_content/FullCartAPI",
+      "RelativePath": "uploads/aafdd45c-bf0f-4eac-a809-06f927bd0482..xlsx",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\aafdd45c-bf0f-4eac-a809-06f927bd0482..xlsx"
     }
   ]
 }

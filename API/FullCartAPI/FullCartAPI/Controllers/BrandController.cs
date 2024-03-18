@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace FullCartAPI.Controllers
 {
-    //[Authorize(Roles = "2")]
+    [Authorize(Roles = "1")]
     [Route("api/[controller]")]
     [ApiController]
     public class BrandController : ControllerBase

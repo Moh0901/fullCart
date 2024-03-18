@@ -21,6 +21,10 @@ import { EditProductComponent } from './Admin/Inventory/edit-product/edit-produc
 import { GetProductComponent } from './Admin/Inventory/get-product/get-product.component';
 import { ViewProductsComponent } from './Customer/view-products/view-products.component';
 import { PageNotFoundComponent } from './Components/page-not-found/page-not-found.component';
+import { SearchPipe } from './search.pipe';
+import { ProductService } from './Services/product.service';
+import { BrandService } from './Services/brand.service';
+import { HomeComponent } from './Components/home/home.component';
 //import { FileSaverModule } from 'ngx-filesaver';
 @NgModule({
   declarations: [
@@ -37,7 +41,9 @@ import { PageNotFoundComponent } from './Components/page-not-found/page-not-foun
     EditProductComponent,
     GetProductComponent,
     ViewProductsComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    SearchPipe,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -47,7 +53,7 @@ import { PageNotFoundComponent } from './Components/page-not-found/page-not-foun
     ReactiveFormsModule,
    // FileSaverModule
   ],
-  providers: [LoginServiceService, CategoryService,
+  providers: [LoginServiceService, CategoryService, ProductService, BrandService,
     {
       provide:HTTP_INTERCEPTORS, useClass:TokenHandlerInterceptor, multi:true
     }],

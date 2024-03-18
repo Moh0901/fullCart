@@ -33,7 +33,7 @@ export class LoginComponent {
       next: (response:any)=> { console.log(response);
         localStorage.setItem('jwt',response);
         console.log("Login Successfully!"); 
-        this.router.navigate(['']);
+        this.router.navigate(['/home']);
         this.onLoginForm.reset();
         this.loadCurrentUser();
         window.location.reload();
@@ -51,5 +51,6 @@ export class LoginComponent {
      }:null;
      localStorage.setItem("role",userinfo.role);
      this.currentUser.next(data);
+     console.log(this.currentUser)
   }
 }
