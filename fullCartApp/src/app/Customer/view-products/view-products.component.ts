@@ -11,6 +11,7 @@ import { ProductService } from 'src/app/Services/product.service';
 export class ViewProductsComponent implements  OnInit {
 
   products: any=[];
+  searchText='';
   constructor(private productService: ProductService) { }
 
   ngOnInit(){

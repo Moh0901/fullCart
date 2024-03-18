@@ -21,10 +21,11 @@ import { EditProductComponent } from './Admin/Inventory/edit-product/edit-produc
 import { GetProductComponent } from './Admin/Inventory/get-product/get-product.component';
 import { ViewProductsComponent } from './Customer/view-products/view-products.component';
 import { PageNotFoundComponent } from './Components/page-not-found/page-not-found.component';
-import { SearchPipe } from './search.pipe';
+
 import { ProductService } from './Services/product.service';
 import { BrandService } from './Services/brand.service';
 import { HomeComponent } from './Components/home/home.component';
+import { SearchPipe } from './Pipes/search.pipe';
 //import { FileSaverModule } from 'ngx-filesaver';
 @NgModule({
   declarations: [
@@ -42,8 +43,9 @@ import { HomeComponent } from './Components/home/home.component';
     GetProductComponent,
     ViewProductsComponent,
     PageNotFoundComponent,
-    SearchPipe,
-    HomeComponent
+
+    HomeComponent,
+     SearchPipe
   ],
   imports: [
     BrowserModule,

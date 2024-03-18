@@ -33,10 +33,10 @@ export class LoginComponent {
       next: (response:any)=> { console.log(response);
         localStorage.setItem('jwt',response);
         console.log("Login Successfully!"); 
-        this.router.navigate(['/home']);
+        this.router.navigate(['viewproduct']);
         this.onLoginForm.reset();
         this.loadCurrentUser();
-        window.location.reload();
+        setTimeout(function(){window.location.reload(); }, 100);
       }
     })
   }
